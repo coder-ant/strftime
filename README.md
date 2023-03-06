@@ -5,7 +5,7 @@
 #### Usage:
 
     var d = new Date();
-    console.log(d.strftime("%a %d %B %Y %I:%M:%S %p"));
+    console.log(d.strftime("%a %d %B %Y %I:%M:%S %p")); // Returns "Mon 06 March 2023 02:12:32 PM"
 
 #### Supported format identifiers
 
