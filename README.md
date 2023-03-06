@@ -26,4 +26,4 @@ Code|Example|Description
 %p|AM|AM or PM
 
 Adding a hyphen as the second character, returns non zero-padded result when the result is a number.
-For example, "%H" returns 04 whereas "%-H" returns 4
+For example, "%I" returns 04 whereas "%-I" returns 4
