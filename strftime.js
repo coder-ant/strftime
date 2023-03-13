@@ -22,10 +22,10 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-Date.prototype.SHORT_WEEK_NAMES_ = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-Date.prototype.LONG_WEEK_NAMES_ = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-Date.prototype.SHORT_MONTH_NAMES_ = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-Date.prototype.LONG_MONTH_NAMES_ = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+SHORT_WEEK_NAMES_ = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+LONG_WEEK_NAMES_ = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+SHORT_MONTH_NAMES_ = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+LONG_MONTH_NAMES_ = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
 //
 // %b - Month abbreviated name
@@ -34,9 +34,9 @@ Date.prototype.LONG_MONTH_NAMES_ = ["January", "February", "March", "April", "Ma
 Date.prototype.getMonthName = function(fmt) {
     var names;
     if ( fmt == "%B" ) {
-        names = this.LONG_MONTH_NAMES_;
+        names = LONG_MONTH_NAMES_;
     } else {
-        names = this.SHORT_MONTH_NAMES_;
+        names = SHORT_MONTH_NAMES_;
     }
     return names[this.getMonth()];
 }
@@ -48,9 +48,9 @@ Date.prototype.getMonthName = function(fmt) {
 Date.prototype.getWeekName = function(fmt) {
     var names;
     if ( fmt == "%A" ) {
-        names = this.LONG_WEEK_NAMES_;
+        names = LONG_WEEK_NAMES_;
     } else {
-        names = this.SHORT_WEEK_NAMES_;
+        names = SHORT_WEEK_NAMES_;
     }
     return names[this.getDay()];
 }
@@ -106,6 +106,7 @@ Date.prototype.strftime = function(fmt) {
     var v;
     for(var i = 0;i < fields.length;i ++) {
         var f = fields[i];
+        padZero = true;
         if (f.length == 3 && f[1] == "-") {
             f = fields[i].replace("-", "");
             padZero = false;
